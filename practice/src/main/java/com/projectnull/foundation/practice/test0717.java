@@ -30,7 +30,7 @@ public class test0717 {
             System.out.println("홀수다");
         }
 
-         // 문제 9. 다시
+         // 문제 9.
 
         System.out.print("이름을 입력하세요 : ");
         String name = sc.nextLine();
@@ -114,32 +114,33 @@ public class test0717 {
 
         // 문제 13.
 
-//        System.out.print("월 급여 입력 : ");
-//        int month = sc.nextInt();
-//        System.out.print("매출액 입력 : ");
-//        int sales = sc.nextInt();
-//
-//        double bonusper = sc.nextDouble();
-//        int bonus= sc.nextInt();
-//        int total = sc.nextInt();
-//
-//        if (sales>=5000){
-//            bonus=sales*0.05;
-//        } else if (sales>=3000) {
-//            bonus=sales*0.03;
-//        } else if (sales>=1000) {
-//            bonus=sales*0.01
-//        } else {
-//            bonus=sales*0;
-//        }
-//
-//        System.out.println("===================");
-//        System.out.println("매출액 : "+ sales);
-//        System.out.println("보너스율 : "+bonusper);
-//        System.out.println("월 급여 : "+month);
-//        System.out.println("보너스 금액 : "+bonus);
-//        System.out.println("===================");
-//        System.out.println("총 급여 : "+ total );
+        System.out.print("월 급여 입력 : ");
+        int monthm = sc.nextInt();
+        System.out.print("매출액 입력 : ");
+        int sales = sc.nextInt();
+
+        double bonusper;
+
+
+        if (sales>=50000000){
+            bonusper = 0.05;
+        } else if (sales>=30000000) {
+            bonusper=0.03;
+        } else if (sales>=1000) {
+            bonusper=0.01;
+        } else {
+            bonusper = 0.0;
+        }
+
+        int bonus= (int)(sales*bonusper);
+        int total = monthm+bonus;
+        System.out.println("===================");
+        System.out.println("매출액 : "+ sales);
+        System.out.println("보너스율 : "+ (int)(bonusper*100)+"%");
+        System.out.println("월 급여 : "+monthm);
+        System.out.println("보너스 금액 : "+bonus);
+        System.out.println("===================");
+        System.out.println("총 급여 : "+ total );
 
    }
 }
