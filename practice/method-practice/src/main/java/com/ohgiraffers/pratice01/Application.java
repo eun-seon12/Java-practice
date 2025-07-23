@@ -11,7 +11,7 @@ public class Application {
         Calculator calculator = new Calculator();
 
         calculator.checkMethod();
-        System.out.println("메소드 호출 확인");
+
 
         int sum1to10 = calculator.sum1to10();
         System.out.println("1부터 10까지의 합 : "+sum1to10);
