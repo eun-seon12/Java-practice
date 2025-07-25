@@ -5,7 +5,6 @@ import com.ohgiraffers.practice02.level01.basic.member.model.dto.MemberDTO;
 public class Application {
     public static void main(String[] args) {
 
-
         MemberDTO memberDTO = new MemberDTO();
 
         System.out.println("id : "+memberDTO.getId());
@@ -31,10 +30,5 @@ public class Application {
         System.out.println("변경 후 gender : "+memberDTO.getGender());
         System.out.println("변경 후 phone : "+memberDTO.getPhone());
         System.out.println("변경 후 email : "+memberDTO.getEmail());
-
-
-
-
-
     }
 }
