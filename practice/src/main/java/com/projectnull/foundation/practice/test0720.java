@@ -17,7 +17,7 @@ public class test0720 {
             System.out.println("1부터 10 사이의 정수를 입력해주세요!");
             return;
         }
-        for (int dan =1; dan<=num;dan++){
+        for (int dan =2; dan<=num;dan++){
             if(dan%2!=0){
                 for(int i=1;i<=9;i++){
                     System.out.println(dan+" * "+i+" = "+(dan*i));
@@ -73,7 +73,7 @@ public class test0720 {
 
         for(i=1;i<=num3;i++){
             if(num3%i==0){
-                System.out.print(i);
+                System.out.print(i+" ");
                 count++;
             }
         }
