@@ -4,8 +4,11 @@ public class Application {
 
     public static void main(String[] args) {
 
-        Area area = new Circle();
+        Shape[] shapes = {new Circle(2), new Rectangle(3, 4)};
 
-        area.area();
+        for (Shape s : shapes) {
+            s.printArea();
+        }
+
     }
 }
