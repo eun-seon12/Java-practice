@@ -50,29 +50,7 @@ public class BookDTO {
 
     @Override
     public String toString() {
-
-        String categorystr = "";
-
-        switch (category) {
-            case 1:
-                categorystr = "인문";
-                break;
-            case 2:
-                categorystr = "자연과학";
-                break;
-            case 3:
-                categorystr="의료";
-                break;
-            case 4:
-                categorystr="기타";
-                break;
-
-        }
         return "BookDTO{" +
-                "도서 번호 : " + bNo +
-                ", 도서 장르 : " + category +
-                ", 도서 제목 : " + title + '\'' +
-                ", 도서 저자 : " + author + '\'' +
                 '}';
     }
 }
