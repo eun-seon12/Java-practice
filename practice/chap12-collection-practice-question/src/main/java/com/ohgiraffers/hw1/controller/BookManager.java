@@ -75,7 +75,7 @@ public class BookManager {
 
 
     public void printBookList(ArrayList<BookDTO> br) {
-        // 향상된 for문을 이용하여 전달받은 ArrayList<BookDTO> 전체 출력
+
         for (BookDTO book : br){
             System.out.println("book = " + book);
         }

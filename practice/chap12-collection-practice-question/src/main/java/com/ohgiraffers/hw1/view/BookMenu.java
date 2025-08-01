@@ -31,7 +31,7 @@ public class BookMenu {
                     bm.addBook(inputBook());
                     break;
                 case 2:
-                    System.out.print("정렬 방식을 선택하세요 (1. 오름차순 2. 내림차순) : ");
+                    System.out.print("정렬 방식 선택 (1. 오름차순 2. 내림차순) : ");
                     int num2 = sc.nextInt();
                     sc.nextLine();
                     ArrayList<BookDTO> list = bm.sortedBookList(num2);
@@ -79,14 +79,14 @@ public class BookMenu {
 
         System.out.print("도서 번호 : ");
         int bNo = sc.nextInt();
-        sc.nextLine(); // 버퍼 제거
+        sc.nextLine();
 
         System.out.print("도서 제목 : ");
         String title = sc.nextLine();
 
         System.out.print("도서 장르 (1:인문 / 2:자연과학 / 3:의료 / 4:기타) : ");
         int category = sc.nextInt();
-        sc.nextLine(); // 버퍼 제거
+        sc.nextLine();
 
         System.out.print("도서 저자 : ");
         String author = sc.nextLine();
