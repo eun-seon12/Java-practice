@@ -35,7 +35,11 @@ public class BookMenu {
                     int num2 = sc.nextInt();
                     sc.nextLine();
                     ArrayList<BookDTO> list = bm.sortedBookList(num2);
-                    bm.printBookList(list);
+                    if (num2 == 1 || num2 == 2){
+                        bm.printBookList(list);
+                    } else{
+                        System.out.println("번호를 잘못 입력하였습니다.");
+                    }
                     break;
                 case 3:
                     System.out.print("삭제할 도서 제목 입력 : ");
@@ -63,19 +67,16 @@ public class BookMenu {
                 case 6:
                     System.out.println("프로그램을 종료합니다.");
                     return;
-
+                default:
+                    System.out.print("1부터 6사이의 숫자를 입력하세요");
+                    break;
             }
+            System.out.println();
         }
 
     }
 
     public BookDTO inputBook(){
-
-        // 도서 번호 : >> 임의 값 입
-        // "도서 제목 : " >> 입력 받음
-        // "도서 장르 (1:인문 / 2:자연과학 / 3:의료 / 4:기타) : " >> 입력 받음 (숫자로)
-        // "도서 저자 : " >> 입력 받음
-        // 매개변수 생성자를 이용하여 위의 초기값을 이용한 BookDTO객체 리턴
 
         System.out.print("도서 번호 : ");
         int bNo = sc.nextInt();
@@ -95,7 +96,6 @@ public class BookMenu {
     }
 
     public String inputBookTitle(){
-        // “도서 제목 : “ >> 입력 받음 >> 리턴
         System.out.print("도서 제목 : " );
         String title = sc.nextLine();
         return title;
