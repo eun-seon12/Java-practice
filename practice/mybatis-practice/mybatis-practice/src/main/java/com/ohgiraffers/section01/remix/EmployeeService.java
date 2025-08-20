@@ -20,4 +20,17 @@ public class EmployeeService {
 
         return employeeList;
     }
+
+    public EmployeeDTO selectEmployeeById(int id) {
+
+        SqlSession sqlSession = getSqlSession();
+
+        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+
+        EmployeeDTO employee = employeeMapper.selectEmployeeById(id);
+
+        sqlSession.close();
+
+        return employee;
+    }
 }

@@ -1,6 +1,7 @@
 package com.ohgiraffers.section01.remix;
 
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeController {
 
@@ -21,6 +22,19 @@ public class EmployeeController {
             printResult.printEmployeeList(employeeList);
         } else{
             printResult.printErrorMessage("selectList");
+        }
+    }
+
+    public void selectEmployeeById(Map<String, String> parameter) {
+
+        int id = Integer.parseInt(parameter.get("id"));
+
+        EmployeeDTO employee = employeeService.selectEmployeeById(id);
+
+        if (employee != null) {
+            printResult.printEmployee(employee);
+        } else {
+            printResult.printErrorMessage("selectOne");
         }
     }
 }

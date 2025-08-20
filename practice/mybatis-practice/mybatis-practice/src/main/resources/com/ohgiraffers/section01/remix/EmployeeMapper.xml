@@ -40,4 +40,9 @@
          where ent_yn='y'
          order by emp_id
     </select>
+    <select id="selectEmployeeById" parameterType="_int" resultMap="employeeResultMap">
+        select*from employee
+        where ent_yn = 'y'
+        and emp_id = #{ id }
+    </select>
 </mapper>

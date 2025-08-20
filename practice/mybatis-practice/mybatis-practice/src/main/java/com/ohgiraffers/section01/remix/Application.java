@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.remix;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Application {
@@ -21,13 +23,24 @@ public class Application {
             int no = sc.nextInt();
 
             switch (no) {
-                case 1:
-                    employeeController.selectAllEmployee();
-                    break;
+                case 1: employeeController.selectAllEmployee(); break;
+                case 2: employeeController.selectEmployeeById(inputEmployeeId()); break;
                 default:
                     System.out.println("잘못된 번호를 선택하셨습니다.");
                     break;
             }
         } while (true);
     }
+    private static Map<String, String> inputEmployeeId() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("사번을 입력하세요 : ");
+        String id = sc.nextLine();
+
+        Map<String, String> parameter = new HashMap<>();
+        parameter.put("id", id);
+
+        return parameter;
+    }
+
 }
