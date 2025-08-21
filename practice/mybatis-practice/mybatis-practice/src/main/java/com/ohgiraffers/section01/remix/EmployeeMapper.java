@@ -7,4 +7,6 @@ public interface EmployeeMapper {
     List<EmployeeDTO> selectAllEmployee();
 
     EmployeeDTO selectEmployeeById(int id);
+
+    int registEmployee(EmployeeDTO employee);
 }

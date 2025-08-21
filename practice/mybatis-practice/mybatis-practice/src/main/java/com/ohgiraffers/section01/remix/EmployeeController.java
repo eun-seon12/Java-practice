@@ -37,4 +37,24 @@ public class EmployeeController {
             printResult.printErrorMessage("selectOne");
         }
     }
+
+    public void registEmployee(Map<String, String> parameter) {
+
+        String name = parameter.get("name");
+        String phone = parameter.get("phone");
+        String deptCode = parameter.get("deptCode");
+        String jobCode = parameter.get("jobCode");
+
+        EmployeeDTO employee = new EmployeeDTO();
+        employee.setName(name);
+        employee.setPhone(phone);
+        employee.setDeptCode(deptCode);
+        employee.setJobCode(jobCode);
+
+        if(employeeService.registEmployee(employee)) {
+            printResult.printSuccessMessage("insert");
+        } else {
+            printResult.printErrorMessage("insert");
+        }
+    }
 }

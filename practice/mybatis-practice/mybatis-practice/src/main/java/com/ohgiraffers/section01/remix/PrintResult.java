@@ -20,4 +20,13 @@ public class PrintResult {
         }
         System.out.println(errorMessage);
     }
+
+    public void printSuccessMessage(String successCode) {
+        String successMessage = "";
+        switch (successCode) {
+            case "insert":
+                successMessage = "신규 메뉴 등록을 성공하였습니다.";
+                break;
+        }
+    }
 }

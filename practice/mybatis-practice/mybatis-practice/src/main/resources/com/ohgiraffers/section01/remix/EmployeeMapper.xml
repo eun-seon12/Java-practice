@@ -45,4 +45,21 @@
         where ent_yn = 'y'
         and emp_id = #{ id }
     </select>
+
+    <insert id="registEmployee" parameterType="com.ohgiraffers.section01.remix.EmployeeDTO">
+        insert into employee
+        (
+        emp_name,
+        phone,
+        dept_code,
+        job_code
+        )
+        values
+        (
+        #{ name },
+        #{ phone },
+        #{ deptCode },
+        #{ jobCode }
+        )
+    </insert>
 </mapper>

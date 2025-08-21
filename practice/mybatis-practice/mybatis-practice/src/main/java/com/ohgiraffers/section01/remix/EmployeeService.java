@@ -33,4 +33,22 @@ public class EmployeeService {
 
         return employee;
     }
+
+    public boolean registEmployee(EmployeeDTO employee) {
+
+        SqlSession sqlSession = getSqlSession();
+
+        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+
+        int result = employeeMapper.registEmployee(employee);
+
+        if (result >0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+        sqlSession.close();
+
+        return result >0? true:false;
+    }
 }
