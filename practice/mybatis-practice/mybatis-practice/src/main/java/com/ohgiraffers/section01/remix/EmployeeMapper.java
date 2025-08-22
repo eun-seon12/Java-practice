@@ -9,4 +9,6 @@ public interface EmployeeMapper {
     EmployeeDTO selectEmployeeById(int id);
 
     int registEmployee(EmployeeDTO employee);
+
+    int updateEmployee(EmployeeDTO employee);
 }

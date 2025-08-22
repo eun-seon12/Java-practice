@@ -62,4 +62,10 @@
         #{ jobCode }
         )
     </insert>
+    <update id="updateEmployee" parameterType="com.ohgiraffers.section01.remix.EmployeeDTO">
+        update employee
+        set dept_code = #{ deptCode }
+        , job_code = #{ jobCode }
+        where emp_id = #{ id }
+    </update>
 </mapper>

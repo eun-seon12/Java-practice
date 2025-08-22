@@ -57,4 +57,22 @@ public class EmployeeController {
             printResult.printErrorMessage("insert");
         }
     }
+
+    public void modifyEmployee(Map<String, String> parameter) {
+
+        String id = parameter.get("id");
+        String deptCode = parameter.get("deptCode");
+        String jobCode = parameter.get("jobCode");
+
+        EmployeeDTO employee = new EmployeeDTO();
+        employee.setId(id);
+        employee.setDeptCode(deptCode);
+        employee.setJobCode(jobCode);
+
+        if (employeeService.modifyEmployee(employee)){
+            printResult.printSuccessMessage("update");
+        } else {
+            printResult.printErrorMessage("update");
+        }
+    }
 }

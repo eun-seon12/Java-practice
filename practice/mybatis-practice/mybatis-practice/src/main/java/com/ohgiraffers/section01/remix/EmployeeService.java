@@ -51,4 +51,24 @@ public class EmployeeService {
 
         return result >0? true:false;
     }
+
+    public boolean modifyEmployee(EmployeeDTO employee) {
+
+        SqlSession sqlSession = getSqlSession();
+
+        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+
+        int result = employeeMapper.updateEmployee(employee);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return result > 0? true : false;
+
+    }
 }

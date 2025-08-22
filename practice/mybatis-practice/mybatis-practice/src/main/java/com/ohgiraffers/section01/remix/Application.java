@@ -26,6 +26,7 @@ public class Application {
                 case 1: employeeController.selectAllEmployee(); break;
                 case 2: employeeController.selectEmployeeById(inputEmployeeId()); break;
                 case 3: employeeController.registEmployee(inputEmployee()); break;
+                case 4: employeeController.modifyEmployee(inputModifyEmployee());break;
                 default:
                     System.out.println("잘못된 번호를 선택하셨습니다.");
                     break;
@@ -60,6 +61,24 @@ public class Application {
         Map<String, String> parameter = new HashMap<>();
         parameter.put("name", name);
         parameter.put("phone", phone);
+        parameter.put("deptCode", deptCode);
+        parameter.put("jobCode", jobCode);
+
+        return parameter;
+    }
+
+    private static Map<String, String> inputModifyEmployee() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("수정할 사번을 입력하세요 : ");
+        String id = sc.nextLine();
+        System.out.print("수정할 부서 코드를 입력하세요 : ");
+        String deptCode = sc.nextLine();
+        System.out.print("수정할 직급 코드를 입력하세요 : ");
+        String jobCode = sc.nextLine();
+
+        Map<String, String> parameter = new HashMap<>();
+        parameter.put("id", id);
         parameter.put("deptCode", deptCode);
         parameter.put("jobCode", jobCode);
 
