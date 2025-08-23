@@ -68,4 +68,10 @@
         , job_code = #{ jobCode }
         where emp_id = #{ id }
     </update>
+
+        <delete id="deleteEmployee" parameterType="_int">
+        delete
+        from employee
+        where emp_id = #{ id }
+    </delete>
 </mapper>
