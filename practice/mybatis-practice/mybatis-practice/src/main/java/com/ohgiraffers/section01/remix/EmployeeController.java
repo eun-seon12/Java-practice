@@ -75,4 +75,15 @@ public class EmployeeController {
             printResult.printErrorMessage("update");
         }
     }
+
+    public void deleteEmployee(Map<String, String> parameter) {
+
+        String id = parameter.get("id");
+
+        if (employeeService.deleteEmployee(id)){
+            printResult.printSuccessMessage("delete");
+        } else {
+            printResult.printErrorMessage("delete");
+        }
+    }
 }

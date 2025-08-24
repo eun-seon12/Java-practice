@@ -11,4 +11,6 @@ public interface EmployeeMapper {
     int registEmployee(EmployeeDTO employee);
 
     int updateEmployee(EmployeeDTO employee);
+
+    int deleteEmployee(String id);
 }

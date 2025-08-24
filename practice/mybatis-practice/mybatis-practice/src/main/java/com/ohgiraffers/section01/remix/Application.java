@@ -27,6 +27,7 @@ public class Application {
                 case 2: employeeController.selectEmployeeById(inputEmployeeId()); break;
                 case 3: employeeController.registEmployee(inputEmployee()); break;
                 case 4: employeeController.modifyEmployee(inputModifyEmployee());break;
+                case 5: employeeController.deleteEmployee(inputEmployeeId()); break;
                 default:
                     System.out.println("잘못된 번호를 선택하셨습니다.");
                     break;

@@ -71,4 +71,23 @@ public class EmployeeService {
         return result > 0? true : false;
 
     }
+
+    public boolean deleteEmployee(String id) {
+
+        SqlSession sqlSession = getSqlSession();
+
+        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+
+        int result= employeeMapper.deleteEmployee(id);
+
+        if(result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+
+        return result > 0? true : false;
+    }
 }
