@@ -6,3 +6,33 @@ cookie와 session의 차이
 보안           상대적으로 낮음    상대적으로 높음
 만료시점         (max-age)      주로 브라우저 종료시 만료
 사용예시      간단한 사용자설정  로그인 정보 등의 민감한 데이터
+package com.example.cookiesession;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+@WebServlet(name = "requestHeaderServlet", urlPatterns = "/count")
+public class RequestHeaderServlet extends HttpServlet {
+
+    @Override
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int count = 0;
+
+        if (req.getCookies() != null) {
+            count = Integer.parseInt(req.getCookies()[0].getValue());
+        }
+
+        Cookie cookie = new Cookie("count", String.valueOf(++count));
+        resp.addCookie(cookie);
+
+        PrintWriter pw = resp.getWriter();
+        pw.println("count : " + count);
+    }
+}
+
